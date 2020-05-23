@@ -26,6 +26,15 @@ export default function auth(state = INITIAL_STATE, action) {
       return produce(state, draft => {
         draft.loading = false;
       });
+
+    case '@auth/LOGOFF':
+      return produce(state, draft => {
+        draft.email = false;
+        draft.loading = false;
+        draft.signed = false;
+        draft.admin = false;
+        draft.token = null;
+      });
     default:
       return state;
   }

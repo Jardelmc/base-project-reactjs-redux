@@ -5,16 +5,19 @@ export const Header = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 64px;
-  background: #32234c;
-  position: absolute;
-  top: 0;
+  height: 48px;
+  background: #075e54;
 
   nav {
     span {
       color: #f4fff8;
       font-weight: bold;
       font-size: 1.1rem;
+    }
+
+    svg {
+      margin-bottom: 8px;
+      margin-right: 4px;
     }
 
     a {

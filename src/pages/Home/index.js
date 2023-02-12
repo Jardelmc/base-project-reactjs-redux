@@ -14,7 +14,7 @@ function Home() {
           justifyContent: 'center',
         }}
       >
-        <h1>FED-CADASTRO-GERAL</h1>
+        <h1>base-react-projetc</h1>
       </div>
     </Container>
   );

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'http://192.168.3.103:4004',
+const srvCadastroApi = axios.create({
+  baseURL: 'http://localhost:3700',
 });
 
-export default api;
+export default { srvCadastroApi };

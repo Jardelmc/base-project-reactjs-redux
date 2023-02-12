@@ -10,17 +10,18 @@ export function* signIn({ payload }) {
   try {
     const { email, password } = payload;
 
-    const response = yield call(api.post, 'sessions', { email, password });
+    const response = yield call(api.srvCadastroApi.post, 'sessions', { email, password });
 
-    const { token, err } = response.data;
+    const { success, err } = response.data;    
 
     if (err) {
       toast.error(err);
       yield put(signFailure());
       return;
     }
-    if (token) {
-      api.defaults.headers.Authorization = `Bearer ${token}`;
+    if (success) {
+      const { token } = success
+      api.srvCadastroApi.defaults.headers.Authorization = `Bearer ${token}`;
 
       yield put(signInSuccess(token, email));
 
@@ -42,7 +43,7 @@ export function setToken({ payload }) {
   const { token } = payload.auth;
 
   if (token) {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
+    api.srvCadastroApi.defaults.headers.Authorization = `Bearer ${token}`;
   }
 }
 

@@ -34,11 +34,11 @@ function FooterComponent() {
           }}
         >
           <a
-            href="http://www.instagram.com/rei_do_sticker"
+            href="http://www.instagram.com/bola_na_rede"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span style={{ color: '#fff' }}> @rei_do_sticker</span>
+            <span style={{ color: '#fff' }}> @bola_na_rede</span>
           </a>
           &emsp;
         </div>

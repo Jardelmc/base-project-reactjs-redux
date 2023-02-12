@@ -4,7 +4,7 @@ import { persistReducer } from 'redux-persist';
 export default reducers => {
   const persistedReducer = persistReducer(
     {
-      key: 'nosso-saldo',
+      key: 'bola-na-rede',
       storage,
       whitelist: ['auth'],
     },

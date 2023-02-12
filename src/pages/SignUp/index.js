@@ -24,14 +24,14 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = useCallback(async () => {
-    const name = document.getElementById('name').value;
+    const user_name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     const createUser = async user => {
       try {
         setLoading(true);
-        const response = await api.post('user/create', user);
+        const response = await api.srvCadastroApi.post('user', user);
         setLoading(false);
         const { err, success } = response.data;
 
@@ -48,9 +48,9 @@ export default function SignIn() {
     };
 
     schema
-      .isValid({ name, email, password })
+      .isValid({ user_name, email, password })
       .then(() => {
-        const user = { name, email, password };
+        const user = { user_name, email, password };
         createUser(user);
       })
       .catch(() => {
